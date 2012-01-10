@@ -539,9 +539,14 @@
 #endif	
     // Start executing the requested task
     
-    //[targetForExecution performSelector:methodForExecution withObject:objectForExecution];
-	
-    objc_msgSend(objectForExecution, methodForExecution); //using this function you no longer see any memory leak warning
+    //objc_msgSend(objectForExecution, methodForExecution); //using this function you no longer see any memory leak warning
+    
+    /*this is a workaround to ignore the warning, the best solution is to use the commented method above, insted of this*/
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
+    [targetForExecution performSelector:methodForExecution withObject:objectForExecution];
+#pragma clang diagnostic pop
+    /* end of workaround */
     
     // Task completed, update view in main thread (note: view operations should
     // be done only in the main thread)

@@ -50,9 +50,10 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 Change-log
 ==========
 
-**Version 0.41** @ 03.01.12
+**Version 0.41** @ 10.01.12
 
 - Support for ARC.
+- Fixed the Warning on [perform selector: withObject:] method + a workaround (ignore the error), i'm working to fix this solution 
 
 **Version 0.4** @ 25.07.10
 
