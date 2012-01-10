@@ -541,7 +541,7 @@
     
     //objc_msgSend(objectForExecution, methodForExecution); //using this function you no longer see any memory leak warning
     
-    /*this is a workaround to ignore the warning, the best solution is to use the commented method above, instead of this*/
+    /* this is a workaround to ignore the warning, the best solution is to use the commented method above, instead of this */
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Warc-performSelector-leaks"
     [targetForExecution performSelector:methodForExecution withObject:objectForExecution];
