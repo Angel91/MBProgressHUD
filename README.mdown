@@ -3,7 +3,7 @@ MBProgressHUD
 
 MBProgressHUD is an iPhone drop-in class that displays a translucent HUD with a progress indicator and some optional labels while work is being done in a background thread. The HUD is meant as a replacement for the undocumented, private UIKit UIProgressHUD with some additional features. 
 
-MBProgressHUD is iOS4 and iPad compatible and released under the MIT license (see MBProgressHUD.h).
+MBProgressHUD is iOS5 and iPad compatible and released under the MIT license (see MBProgressHUD.h).
 
 [![](http://dl.dropbox.com/u/378729/MBProgressHUD/1-thumb.png)](http://dl.dropbox.com/u/378729/MBProgressHUD/1.png)
 [![](http://dl.dropbox.com/u/378729/MBProgressHUD/2-thumb.png)](http://dl.dropbox.com/u/378729/MBProgressHUD/2.png)
