@@ -36,10 +36,6 @@
 	((UIScrollView *)self.view).contentSize = content.bounds.size;
 }
 
-- (void)dealloc {
-    [super dealloc];
-}
-
 #pragma mark -
 #pragma mark IBActions
 
@@ -101,7 +97,7 @@
 	
 	// The sample image is based on the work by http://www.pixelpressicons.com, http://creativecommons.org/licenses/by/2.5/ca/
 	// Make the customViews 37 by 37 pixels for best results (those are the bounds of the build-in progress indicators)
-	HUD.customView = [[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"37x-Checkmark.png"]] autorelease];
+	HUD.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"37x-Checkmark.png"]];
 	
     // Set custom view mode
     HUD.mode = MBProgressHUDModeCustomView;
@@ -159,9 +155,8 @@
 	
 	NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
 	[connection start];
-	[connection release];
 	
-	HUD = [[MBProgressHUD showHUDAddedTo:self.navigationController.view animated:YES] retain];
+	HUD = [MBProgressHUD showHUDAddedTo:self.navigationController.view animated:YES];
 }
 
 
@@ -216,7 +211,7 @@
     sleep(2);
 	// The sample image is based on the work by www.pixelpressicons.com, http://creativecommons.org/licenses/by/2.5/ca/
 	// Make the customViews 37 by 37 pixels for best results (those are the bounds of the build-in progress indicators)
-	HUD.customView = [[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"37x-Checkmark.png"]] autorelease];
+	HUD.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"37x-Checkmark.png"]];
 	HUD.mode = MBProgressHUDModeCustomView;
 	HUD.labelText = @"Completed";
 	sleep(2);
@@ -237,7 +232,7 @@
 }
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection {
-	HUD.customView = [[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"37x-Checkmark.png"]] autorelease];
+	HUD.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"37x-Checkmark.png"]];
     HUD.mode = MBProgressHUDModeCustomView;
 	[HUD hide:YES afterDelay:2];
 }
@@ -252,7 +247,6 @@
 - (void)hudWasHidden:(MBProgressHUD *)hud {
     // Remove HUD from screen when the HUD was hidded
     [HUD removeFromSuperview];
-    [HUD release];
 	HUD = nil;
 }
 
